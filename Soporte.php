@@ -38,7 +38,7 @@ class Soporte {
         echo "<br>Precio sin IVA = " . $this->getPrecio() . " euros";
         echo "<br>Precio con IVA = " . $this->getPrecioConIVA() . " euros";
         echo "<br>Numero = " . $this->getNumero();
-        echo '<br> --------------------';
+        echo '<br> --------------------<br>';
     }
 
 }
