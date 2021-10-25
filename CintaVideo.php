@@ -22,6 +22,8 @@ class CintaVideo extends Soporte {
         echo "<br>Numero = " . $this->getNumero();
         echo "<br>Duracion: " . $this->duracion;
         echo '<br> -------------------- <br>';
+        //NOTA: se que puedo llamar a "parent::" y llamar al metodo muestra y añadir lo que falta
+        //pero prefiero sobre escribirlo todo.
     }
 
 }

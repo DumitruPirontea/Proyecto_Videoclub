@@ -37,6 +37,8 @@ class Juego extends Soporte {
         echo "<br>Consola: " . $this->consola;
         $this->muestraJugadoresPosibles();
         echo '<br> -------------------- <br>';
+        //NOTA: se que puedo llamar a "parent::" y llamar al metodo muestra y añadir lo que falta
+        //pero prefiero sobre escribirlo todo.
     }
 
 }

@@ -25,6 +25,8 @@ class Dvd extends Soporte {
         echo "<br>Idiomas: " . $this->idiomas;
         echo "<br>Formato: " . $this->formatoPantalla;
         echo '<br> -------------------- <br>';
+        //NOTA: se que puedo llamar a "parent::" y llamar al metodo muestra y añadir lo que falta
+        //pero prefiero sobre escribirlo todo.
     }
 
 }
