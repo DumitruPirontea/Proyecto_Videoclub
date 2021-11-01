@@ -24,7 +24,7 @@ class Soporte {
     }
 
     public function getPrecioConIVA() {
-        $precio_iva = $this->precio + ($this->precio * 0.21);
+        $precio_iva = $this->precio + ($this->precio * IVA);
         return $precio_iva;
     }
 

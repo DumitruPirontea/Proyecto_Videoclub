@@ -4,56 +4,128 @@ require_once './Soporte.php';
 
 class Cliente {
 
-    //----------------------------atributos----------------------
+    //--------------------------atributos-----------------------------
     public $nombre;
     private $numero;
-    private $soportesAlquilados = []; //array
-    private $numSoportesAlquilados; //aqui se almacenará el tamaño del array
-    private $maxAlquilerConcurrente;
+    private $soportesAlquilados;
+    private $numSoportesAlquilados;
+    private $maxAlquileresConcurrente;
 
-    //---------------------------constructor-----------------------
-    public function __construct($nombre, $numero, $maxAlquilerConcurrente = 3) {
-        //maxAlquilerConcurrente es un paramerto opcional y con valor por defecto 3
+    //----------------------------constructor---------------------------
+    public function __construct(
+            string $nombre,
+            int $numero,
+            int $maxAlquileresConcurrente = 3
+    ) {
         $this->nombre = $nombre;
         $this->numero = $numero;
-        $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
+        $this->maxAlquileresConcurrente = $maxAlquileresConcurrente;
+        $this->soportesAlquilados = array();
+        $this->numSoportesAlquilados = 0;
     }
 
-    //------------------------metodos------------
+    //----------------------------metodos--------------------------------
+
+    /**
+     * Get the value of numero
+     */
     public function getNumero() {
         return $this->numero;
     }
 
-    public function setNumero($numero): void {
+    /**
+     * Set the value of numero
+     *
+     * @return  self
+     */
+    public function setNumero($numero) {
         $this->numero = $numero;
-    }
 
-    public function getNumSoportesAlquilados() {
-        return $this->numSoportesAlquilados;
+        return $this;
     }
 
     public function muestraResumen() {
-        echo "<br> Nombre: " . $this->nombre;
-        echo "<br> Cantidad de alquileres: " . $this->numSoportesAlquilados;
-        //echo "<br> Cantidad de alquileres: ".count($this->soportesAlquilados); //tambien se puede asi
+        echo "<br>";
+        echo "Nombre: $this->nombre <br>";
+        echo "Cantidad alquileres: $this->numSoportesAlquilados <br>";
     }
 
     public function tieneAlquilado(Soporte $s): bool {
-        if (array_search($s, $this->numSoportesAlquilados, true)) {
-            return true;
-        } else {
+        if (empty($this->soportesAlquilados)) {
+
             return false;
         }
+
+        foreach ($this->soportesAlquilados as $unSoporte) {
+            echo "<br> ... inspeccionant ...<br>";
+            if ($unSoporte->getNumero() == $s->getNumero()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function alquilar(Soporte $s): bool {
-        if (count($this->numSoportesAlquilados) < $this->maxAlquilerConcurrente) {
-            if (!$this->tieneAlquilado($s)) {
-                array_push($this->numSoportesAlquilados, $s);
+        if ($this->tieneAlquilado($s)) {
+            echo "Error: no se puede alquilar otra vez <br>";
+            return false;
+        }
+        if ($this->maxAlquileresConcurrente == $this->numSoportesAlquilados) {
+            echo "Error: has alcanzado el límite de alquileres <br>";
+            return false;
+        }
+
+        array_push($this->soportesAlquilados, $s);
+        $this->numSoportesAlquilados++;
+        echo "<br>[Info]: Soporte " . $s->getNumero() . " alquilado correctamente<br>";
+        //print_r($this->soportesAlquilados);
+        return true;
+    }
+
+//----------------------------------------------------------------------------
+    public function tieneAlquiladoSoporte(soporte $soporte) {
+        //bucle hasta el final del array que hemos generado en el __constructor
+        for ($i = 0; $i < $this->maxAlquileresConcurrente; $i++) {
+            //Si es null, no tiene soporte alquilado
+            if (!is_null($this->soportesAlquilados[$i])) {
+                //comparamos el identificador del apuntador a la clase soporte
+                // con el apuntador que ha recibido la funcion. En los dos,
+                // utilizamos la funcion "devolverNumeroIdentificacion" de la
+                // clase soporte.
+                if ($this->soportesAlquilados[$i]->getNumero() == $soporte->getNumero())
+                    return true;
+            }
+        }
+        //si se llega a esta linea, es que no se tiene alquilado el soporte
+        return false;
+    }
+
+    //------------------------------------------------------------------------
+    public function devolver(int $numSoporte) {
+        if (in_array($numSoporte, array_keys($this->soportesAlquilados))) {
+            unset($this->soportesAlquilados[$numSoporte]);
+            echo "<br> se ha elimindo el soporte " . $numSoporte;
+        } else {
+            echo "<br> el soporte no está en la lista";
+        }
+    }
+
+    //***************************************
+    public function ListarAlquileres(): void {
+        if ($this->numSoportesAlquilados == 0) {
+            echo "<br />Este cliente no tiene ningun soporte alquilado\n";
+        } else {
+            echo "<br />Listado de soportes alquilados por: " . $this->nombre . "\n";
+            for ($i = 0; $i < $this->maxAlquileresConcurrente - 1; $i++) {
+                if (!is_null($this->soportesAlquilados[$i])) {
+                    $this->muestraResumen();
+                }
             }
         }
     }
 
 }
 ?>
+
+
 
