@@ -1,13 +1,13 @@
 <?php
 
+define("IVA", 0.21);
+
 class Soporte {
 
     //-----------------------------Atributos----------------------------
     public $titulo;
     protected $numero;
     private $precio;
-
-    private const IVA = 21;
 
     //NOTA: no encuentro en ningun sitio de como hacer una constante privada y estatica
     // en java se puede hacer asi: Public static final nombre_constante;

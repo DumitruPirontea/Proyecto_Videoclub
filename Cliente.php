@@ -57,7 +57,6 @@ class Cliente {
         }
 
         foreach ($this->soportesAlquilados as $unSoporte) {
-            echo "<br> ... inspeccionant ...<br>";
             if ($unSoporte->getNumero() == $s->getNumero()) {
                 return true;
             }
@@ -67,11 +66,11 @@ class Cliente {
 
     public function alquilar(Soporte $s): bool {
         if ($this->tieneAlquilado($s)) {
-            echo "Error: no se puede alquilar otra vez <br>";
+            echo "<br>Error: no se puede alquilar otra vez <br>";
             return false;
         }
         if ($this->maxAlquileresConcurrente == $this->numSoportesAlquilados) {
-            echo "Error: has alcanzado el límite de alquileres <br>";
+            echo "<br>Error: has alcanzado el límite de alquileres <br>";
             return false;
         }
 
@@ -115,10 +114,12 @@ class Cliente {
         if ($this->numSoportesAlquilados == 0) {
             echo "<br />Este cliente no tiene ningun soporte alquilado\n";
         } else {
-            echo "<br />Listado de soportes alquilados por: " . $this->nombre . "\n";
-            for ($i = 0; $i < $this->maxAlquileresConcurrente - 1; $i++) {
+
+            for ($i = 0; $i < $this->maxAlquileresConcurrente -1; $i++) {
                 if (!is_null($this->soportesAlquilados[$i])) {
-                    $this->muestraResumen();
+                    //var_dump($this->soportesAlquilados[$i]);
+                    echo "<br />Listado de soportes alquilados por: " . $this->nombre . "\n";
+                    $this->soportesAlquilados[$i]->muestraResumen();
                 }
             }
         }
