@@ -2,7 +2,7 @@
 
 define("IVA", 0.21);
 
-class Soporte {
+abstract class Soporte {
 
     //-----------------------------Atributos----------------------------
     public $titulo;
