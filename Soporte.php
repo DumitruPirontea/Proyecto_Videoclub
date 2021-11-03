@@ -1,8 +1,9 @@
 <?php
 
+require_once './Resumible.php';
 define("IVA", 0.21);
 
-abstract class Soporte {
+abstract class Soporte implements Resumible {
 
     //-----------------------------Atributos----------------------------
     public $titulo;
