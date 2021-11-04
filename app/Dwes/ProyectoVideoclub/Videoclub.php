@@ -1,6 +1,6 @@
 <?php
 
-namespace Dwes\ProyectoVideoclub;
+namespace app\Dwes\ProyectoVideoclub;
 
 require_once 'CintaVideo.php';
 require_once 'Cliente.php';

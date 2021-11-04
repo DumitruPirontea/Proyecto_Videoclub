@@ -1,17 +1,17 @@
 <?php
 
-require_once "./Dwes/ProyectoVideoclub/Soporte.php";
-require_once './Dwes/ProyectoVideoclub/CintaVideo.php';
-require_once './Dwes/ProyectoVideoclub/Dvd.php';
-require_once './Dwes/ProyectoVideoclub/Juego.php';
-require_once './Dwes/ProyectoVideoclub/Resumible.php';
-require_once './Dwes/ProyectoVideoclub/Cliente.php';
+require_once "./app/Dwes/ProyectoVideoclub/Soporte.php";
+require_once './app/Dwes/ProyectoVideoclub/CintaVideo.php';
+require_once './app/Dwes/ProyectoVideoclub/Dvd.php';
+require_once './app/Dwes/ProyectoVideoclub/Juego.php';
+require_once './app/Dwes/ProyectoVideoclub/Resumible.php';
+require_once './app/Dwes/ProyectoVideoclub/Cliente.php';
 
-
-use Dwes\ProyectoVideoclub\CintaVideo;
-use Dwes\ProyectoVideoclub\Dvd;
-use Dwes\ProyectoVideoclub\Juego;
-use Dwes\ProyectoVideoclub\Cliente;
+use app\Dwes\ProyectoVideoclub\Cliente;
+use app\Dwes\ProyectoVideoclub\CintaVideo;
+use app\Dwes\ProyectoVideoclub\Dvd;
+use app\Dwes\ProyectoVideoclub\Juego;
+use app\Dwes\ProyectoVideoclub\Soporte;
 
 //instanciamos un par de objetos cliente
 $cliente1 = new Cliente("Bruce Wayne", 23);

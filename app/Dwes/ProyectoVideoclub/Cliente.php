@@ -1,6 +1,6 @@
 <?php
 
-namespace Dwes\ProyectoVideoclub;
+namespace app\Dwes\ProyectoVideoclub;
 
 class Cliente {
 

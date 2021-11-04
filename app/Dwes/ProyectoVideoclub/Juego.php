@@ -1,5 +1,5 @@
 <?php
-namespace Dwes\ProyectoVideoclub;
+namespace app\Dwes\ProyectoVideoclub;
 
 require_once 'Soporte.php';
 
