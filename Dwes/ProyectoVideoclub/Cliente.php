@@ -1,6 +1,6 @@
 <?php
 
-require_once './Soporte.php';
+namespace Dwes\ProyectoVideoclub;
 
 class Cliente {
 
@@ -64,7 +64,7 @@ class Cliente {
         return false;
     }
 
-    public function alquilar(Soporte $s){
+    public function alquilar(Soporte $s) {
         if ($this->tieneAlquilado($s)) {
             echo "<br>Error: no se puede alquilar otra vez <br>";
             return $this;
@@ -115,7 +115,7 @@ class Cliente {
             echo "<br />Este cliente no tiene ningun soporte alquilado\n";
         } else {
 
-            for ($i = 0; $i < $this->maxAlquileresConcurrente -1; $i++) {
+            for ($i = 0; $i < $this->maxAlquileresConcurrente - 1; $i++) {
                 if (!is_null($this->soportesAlquilados[$i])) {
                     //var_dump($this->soportesAlquilados[$i]);
                     echo "<br />Listado de soportes alquilados por: " . $this->nombre . "\n";

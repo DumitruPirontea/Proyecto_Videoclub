@@ -1,6 +1,8 @@
 <?php
 
-require_once './Soporte.php'; //necesario hacer el requerimiento para no tener error.
+namespace Dwes\ProyectoVideoclub;
+
+require_once 'Soporte.php';
 
 class CintaVideo extends Soporte {
 

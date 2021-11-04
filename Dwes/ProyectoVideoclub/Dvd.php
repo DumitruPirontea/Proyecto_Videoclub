@@ -1,6 +1,7 @@
 <?php
+namespace Dwes\ProyectoVideoclub;
 
-require_once './Soporte.php'; //necesario hacer el requerimiento para no tener error.
+require_once 'Soporte.php';
 
 class Dvd extends Soporte {
 

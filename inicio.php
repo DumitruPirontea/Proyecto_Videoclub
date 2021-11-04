@@ -1,9 +1,14 @@
 <?php
 
-require_once "Soporte.php";
-require_once './CintaVideo.php';
-require_once './Dvd.php';
-require_once './Juego.php';
+require_once "./Dwes/ProyectoVideoclub/Soporte.php";
+require_once './Dwes/ProyectoVideoclub/CintaVideo.php';
+require_once './Dwes/ProyectoVideoclub/Dvd.php';
+require_once './Dwes/ProyectoVideoclub/Juego.php';
+
+use Dwes\ProyectoVideoclub\Soporte;
+use Dwes\ProyectoVideoclub\CintaVideo;
+use Dwes\ProyectoVideoclub\Dvd;
+use Dwes\ProyectoVideoclub\Juego;
 
 $soporte1 = new Soporte("Tenet", 22, 3);
 echo "<strong>" . $soporte1->titulo . "</strong>";

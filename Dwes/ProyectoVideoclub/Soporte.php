@@ -1,6 +1,9 @@
 <?php
 
-require_once './Resumible.php';
+namespace Dwes\ProyectoVideoclub;
+
+require_once 'Resumible.php';
+
 define("IVA", 0.21);
 
 abstract class Soporte implements Resumible {
