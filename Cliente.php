@@ -64,21 +64,21 @@ class Cliente {
         return false;
     }
 
-    public function alquilar(Soporte $s): bool {
+    public function alquilar(Soporte $s){
         if ($this->tieneAlquilado($s)) {
             echo "<br>Error: no se puede alquilar otra vez <br>";
-            return false;
+            return $this;
         }
         if ($this->maxAlquileresConcurrente == $this->numSoportesAlquilados) {
             echo "<br>Error: has alcanzado el límite de alquileres <br>";
-            return false;
+            return $this;
         }
 
         array_push($this->soportesAlquilados, $s);
         $this->numSoportesAlquilados++;
         echo "<br>[Info]: Soporte " . $s->getNumero() . " alquilado correctamente<br>";
         //print_r($this->soportesAlquilados);
-        return true;
+        return $this;
     }
 
 //----------------------------------------------------------------------------

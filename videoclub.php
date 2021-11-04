@@ -87,10 +87,10 @@ class Videoclub {
         //si hemos encontrado el cliente y producto...
         if ($posCliente >= 0 && $posProducto >= 0) {
             $this->socios[$posCliente]->alquilar($this->productos[$posProducto]);
-            return true;
+            return $this;
         } else {
             echo "<br />Ha habido un error en el numero del cliente o producto...\n";
-            return false;
+            return $this;
         }
     }
 
