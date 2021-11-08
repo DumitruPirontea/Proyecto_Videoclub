@@ -1,12 +1,7 @@
 <?php
 
-namespace app\Dwes\ProyectoVideoclub;
+namespace Dwes\ProyectoVideoclub;
 
-require_once 'CintaVideo.php';
-require_once 'Cliente.php';
-require_once 'Dvd.php';
-require_once 'Juego.php';
-require_once 'Soporte.php';
 
 
 class Videoclub {

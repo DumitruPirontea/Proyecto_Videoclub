@@ -1,8 +1,6 @@
 <?php
 
-namespace app\Dwes\ProyectoVideoclub;
-
-require_once 'Resumible.php';
+namespace Dwes\ProyectoVideoclub;
 
 define("IVA", 0.21);
 

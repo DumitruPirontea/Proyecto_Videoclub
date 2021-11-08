@@ -1,7 +1,7 @@
 <?php
-namespace app\Dwes\ProyectoVideoclub;
+namespace Dwes\ProyectoVideoclub;
 
-require_once 'Soporte.php';
+//use Soporte; // al estar dentro del mismo namespaces no es necesario
 
 class Dvd extends Soporte {
 

@@ -1,7 +1,6 @@
 <?php
-namespace app\Dwes\ProyectoVideoclub;
+namespace Dwes\ProyectoVideoclub;
 
-require_once 'Soporte.php';
 
 class Juego extends Soporte {
 

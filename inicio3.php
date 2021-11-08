@@ -1,9 +1,8 @@
 <?php
 
-include_once "./app/Dwes/ProyectoVideoclub/videoclub.php"; // No incluimos nada más
+require_once 'autoload.php';
 
-use app\Dwes\ProyectoVideoclub\Videoclub;
-
+use Dwes\ProyectoVideoclub\Videoclub;
 
 $vc = new Videoclub("Severo 8A");
 
