@@ -23,6 +23,14 @@ class Videoclub {
     }
 
     //-------------------------------metodos---------------------
+    public function getNumProductosAlquilados() {
+        return $this->numProductosAlquilados;
+    }
+
+    public function getNumTotalAlquileres() {
+        return $this->numTotalAlquileres;
+    }
+
     //************************************
     private function incluirProducto(Soporte $producto) {
         echo "<br />Incluido Producto (Numero: " . $producto->getNumero() . ")\n";
@@ -122,6 +130,24 @@ class Videoclub {
             }
         }
         return -1;
+    }
+
+    //---------------------------------------------------------------------
+    public function alquilarSocioProductos(int $numSocio, array $numerosProductos) {
+        //debe recibir array con productos a alquilar
+        //antes de alquilar debe comprobar que los productos se puedan alquilar.
+        $posCliente = $this->clientesComprovar($numSocio);
+        $posProducto = $this->productosComprovar($numeroSoporte);
+
+        foreach ($numerosProductos as $producto) {
+            if ($numerosProductos->alquilado == false) {
+                // se puede alquilar:
+                $this->socios[$posCliente]->alquilar($this->productos[$producto]);
+            } else {
+                // no se puede alquilar ya que ya está alquilado.
+                echo "NO se puede alquilar porque ya está alquilado";
+            }
+        }
     }
 
 }
