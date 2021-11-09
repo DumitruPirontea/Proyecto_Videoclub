@@ -1,7 +1,7 @@
 <?php
 namespace Dwes\ProyectoVideoclub\Util;
 
-class VideoclubException extends \Excption{
+class VideoclubException extends \Exception{
     
 }
 ?>

@@ -2,6 +2,14 @@
 
 namespace Dwes\ProyectoVideoclub;
 
+//include_once 'Util/SoporteYaAlquiladoException.php';
+//include_once 'Util/CupoSuperadoException.php';
+
+//
+use Dwes\ProyectoVideoclub\Util\SoporteYaAlquiladoException;
+use Dwes\ProyectoVideoclub\Util\CupoSuperadoException;
+//
+
 class Cliente {
 
     //--------------------------atributos-----------------------------
@@ -67,11 +75,13 @@ class Cliente {
     public function alquilar(Soporte $s) {
         if ($this->tieneAlquilado($s)) {
             echo "<br>Error: no se puede alquilar otra vez <br>";
-            return $this;
+            throw new SoporteYaAlquiladoException("Exception, no se puede volver a alquilar");
+            //return $this;
         }
         if ($this->maxAlquileresConcurrente == $this->numSoportesAlquilados) {
             echo "<br>Error: has alcanzado el límite de alquileres <br>";
-            return $this;
+            throw new CupoSuperadoException("Exception, limite de alquileres alcanzado");
+            //return $this;
         }
 
         array_push($this->soportesAlquilados, $s);

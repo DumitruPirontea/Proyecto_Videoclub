@@ -3,6 +3,8 @@
 namespace Dwes\ProyectoVideoclub;
 
 
+use Dwes\ProyectoVideoclub\Util\ClienteNoEncontradoException;
+
 
 class Videoclub {
 
@@ -80,15 +82,21 @@ class Videoclub {
     //--------------------------------------------------------------------------
     //--------------------------------------------------------------------------
     public function alquilaSocioProducto($numeroCliente, $numeroSoporte) {
-        $posCliente = $this->clientesComprovar($numeroCliente);
-        $posProducto = $this->productosComprovar($numeroSoporte);
-        //si hemos encontrado el cliente y producto...
-        if ($posCliente >= 0 && $posProducto >= 0) {
-            $this->socios[$posCliente]->alquilar($this->productos[$posProducto]);
-            return $this;
-        } else {
-            echo "<br />Ha habido un error en el numero del cliente o producto...\n";
-            return $this;
+        try {
+            $posCliente = $this->clientesComprovar($numeroCliente);
+            $posProducto = $this->productosComprovar($numeroSoporte);
+            //si hemos encontrado el cliente y producto...
+            if ($posCliente >= 0 && $posProducto >= 0) {
+                $this->socios[$posCliente]->alquilar($this->productos[$posProducto]);
+                return $this;
+            } else {
+                //echo "<br />Ha habido un error en el numero del cliente o producto...\n";
+                throw new ClienteNoEncontradoException("Exception, No se ha encontrado el cliente");
+                //return $this;
+            }
+        } catch (Exception $ex) {
+            //throw new ClienteNoEncontradoException("Exception, No se ha encontrado el cliente");
+            echo "<br>" . $ex;
         }
     }
 
