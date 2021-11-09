@@ -3,16 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/inicio2.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Cliente.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Juego.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Dvd.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/autoload.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/inicio3.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/CintaVideo.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Soporte.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Videoclub.php</file>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Resumible.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Util/VideoclubException.php</file>
         </group>
     </open-files>
 </project-private>
