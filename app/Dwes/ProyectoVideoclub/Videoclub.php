@@ -137,7 +137,6 @@ class Videoclub {
         //debe recibir array con productos a alquilar
         //antes de alquilar debe comprobar que los productos se puedan alquilar.
         $posCliente = $this->clientesComprovar($numSocio);
-        $posProducto = $this->productosComprovar($numeroSoporte);
 
         foreach ($numerosProductos as $producto) {
             if ($numerosProductos->alquilado == false) {
@@ -148,6 +147,43 @@ class Videoclub {
                 echo "NO se puede alquilar porque ya está alquilado";
             }
         }
+    }
+
+    //----------------------------------------------------------------------
+    public function devolverSocioProducto(int $numSocio, int $numeroProducto) {
+        //comprobamos que exista el socio y el producto
+        $posCliente = $this->clientesComprovar($numSocio);
+        $posProducto = $this->productosComprovar($numeroProducto);
+
+        $socio_y_producto = array();
+
+        if ($posCliente >= 0 && $posProducto >= 0) {
+            array_push($socio_y_producto, $this->socios[$posCliente]);
+            array_push($socio_y_producto, $this->productos[$posProducto]);
+          
+        } else {
+            echo "<br />Ha habido un error en el numero del cliente o producto...\n";
+        }
+        return $socio_y_producto;
+    }
+
+    public function devolverSocioProductos(int $numSocio, array $numerosProductos) {
+        $posCliente = $this->clientesComprovar($numSocio);
+        $socio_y_producto = array();
+
+        if ($posCliente >= 0) {
+            array_push($socio_y_producto, $this->socios[$posCliente]);
+        }
+
+        foreach ($numerosProductos as $producto) {
+            if ($posCliente >= 0) {
+                array_push($socio_y_producto, $producto);
+                $this->socios[$posCliente]->tieneAlquilado($producto);
+            } else {
+                echo "<br />Ha habido un error en el numero del cliente o producto...\n";
+            }
+        }
+        return $socio_y_producto;
     }
 
 }
