@@ -2,9 +2,7 @@
 
 namespace Dwes\ProyectoVideoclub;
 
-
 use Dwes\ProyectoVideoclub\Util\ClienteNoEncontradoException;
-
 
 class Videoclub {
 
@@ -14,6 +12,8 @@ class Videoclub {
     private $numProductos;
     private $socios; //array que contiene los clientes
     private $numSocios; // aqui guardaremos el numero de socios
+    private $numProductosAlquilados;
+    private $numTotalAlquileres;
 
     //-----------------------------Constructor-------------------
     public function __construct($nombre) {

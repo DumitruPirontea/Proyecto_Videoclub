@@ -10,6 +10,7 @@ abstract class Soporte implements Resumible {
     public $titulo;
     protected $numero;
     private $precio;
+    public $alquilado;
 
     //NOTA: no encuentro en ningun sitio de como hacer una constante privada y estatica
     // en java se puede hacer asi: Public static final nombre_constante;
@@ -18,6 +19,7 @@ abstract class Soporte implements Resumible {
         $this->titulo = $titulo;
         $this->numero = $numero;
         $this->precio = $precio;
+        $this->alquilado = false;
     }
 
     //----------------------------metodos-------------------------------
