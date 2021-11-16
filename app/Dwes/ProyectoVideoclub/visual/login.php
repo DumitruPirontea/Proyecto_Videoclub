@@ -15,7 +15,7 @@ if (isset($_POST['enviar'])) {
             session_start();
             $_SESSION['usuario'] = $usuario;
             // cargamos la página principal
-            include "main.php";
+            include "mainAdmin.php";
         } else if ($usuario == "usuario" && $password == "usuario") {
             // almacenamos el usuario en la sesión
             session_start();

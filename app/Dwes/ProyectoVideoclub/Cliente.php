@@ -18,6 +18,9 @@ class Cliente {
     private $soportesAlquilados;
     private $numSoportesAlquilados;
     private $maxAlquileresConcurrente;
+    
+    private $user;
+    private $password;
 
     //----------------------------constructor---------------------------
     public function __construct(
@@ -33,7 +36,23 @@ class Cliente {
     }
 
     //----------------------------metodos--------------------------------
+    public function getUser() {
+        return $this->user;
+    }
 
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function setUser($user): void {
+        $this->user = $user;
+    }
+
+    public function setPassword($password): void {
+        $this->password = $password;
+    }
+
+    
     /**
      * Get the value of numero
      */
