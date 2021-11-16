@@ -26,5 +26,7 @@ if (!isset($_SESSION['usuario'])) { //si no existe el atributo "usuario" es que 
             <li>Producto 2</li>
             <li>Producto 3</li>
         </ul>
+        <br>
+        <a href="formUpdateCliente.php" >Modificar datos del cliente</a>
     </body>
 </html>

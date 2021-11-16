@@ -48,7 +48,9 @@ if (!isset($_SESSION['nombre_usuario_registrado']) && !isset($_SESSION['usuario_
         <br>
         <h1>Usuario registrado:</h1>
         <h2><?php echo "Nombre Usuario: $nombre_usuario_registrado --- Usuario: $usuario_registrado ";?></h2>
+        <br>
         <a href="formCreateCliente.php" >Crear un nuevo cliente</a>
+        <a href="formUpdateCliente.php" >Modificar datos de un cliente</a>
     </body>
 </html>
 

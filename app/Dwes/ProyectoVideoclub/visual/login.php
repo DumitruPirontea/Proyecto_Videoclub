@@ -21,7 +21,7 @@ if (isset($_POST['enviar'])) {
             session_start();
             $_SESSION['usuario'] = $usuario;
             // cargamos la página principal
-            include "main.php";
+            include "mainCliente.php";
         } else {
             // Si las credenciales no son válidas, se vuelven a pedir
             $error = "Usuario o contraseña no válidos!";
