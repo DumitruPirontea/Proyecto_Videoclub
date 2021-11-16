@@ -10,6 +10,21 @@ if (!isset($_SESSION['usuario'])) { //si no existe el atributo "usuario" es que 
 }
 ?>
 
+<?php
+// Recuperamos la información de la sesión
+if (!isset($_SESSION)) { //si no existe la sesion, se crea
+    session_start();
+}
+
+// Y comprobamos que el usuario se haya autentificado
+if (!isset($_SESSION['nombre_usuario_registrado']) && !isset($_SESSION['usuario_registrado'])) {
+    echo "<br> Error, al registrar usuario";
+} else {
+    $nombre_usuario_registrado = $_SESSION['nombre_usuario_registrado'];
+    $usuario_registrado = $_SESSION['usuario_registrado'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -29,5 +44,11 @@ if (!isset($_SESSION['usuario'])) { //si no existe el atributo "usuario" es que 
             <li>Producto 3</li>
             <li>Producto 4</li>
         </ul>
+        <br>
+        <br>
+        <h1>Usuario registrado:</h1>
+        <h2><?php echo "Nombre Usuario: $nombre_usuario_registrado --- Usuario: $usuario_registrado ";?></h2>
+        <a href="formCreateCliente.php" >Crear un nuevo cliente</a>
     </body>
 </html>
+
