@@ -47,10 +47,25 @@ if (!isset($_SESSION['nombre_usuario_registrado']) && !isset($_SESSION['usuario_
         <br>
         <br>
         <h1>Usuario registrado:</h1>
-        <h2><?php echo "Nombre Usuario: $nombre_usuario_registrado --- Usuario: $usuario_registrado ";?></h2>
+        <h2><?php echo "Nombre Usuario: $nombre_usuario_registrado --- Usuario: $usuario_registrado "; ?></h2>
         <br>
         <a href="formCreateCliente.php" >Crear un nuevo cliente</a>
+        <br>
         <a href="formUpdateCliente.php" >Modificar datos de un cliente</a>
+        <br>
+        <div>
+            <form>
+                <label>Borrar usuario</label>
+
+                <button onclick="confirmar_borrado()">Borrar Usuario</button>
+            </form>
+
+        </div>
     </body>
 </html>
 
+<script>
+    function confirmar_borrado() {
+        var nombre_usuario = prompt("introduce el nombre del usuario a borrar: ")
+        alert("el usuario: " + nombre_usuario + " se va a borrar");
+    }
