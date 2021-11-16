@@ -154,6 +154,9 @@ class Cliente {
         }
     }
 
+    public function getAlquileres(){
+        return $this->soportesAlquilados;
+    }
 }
 ?>
 
