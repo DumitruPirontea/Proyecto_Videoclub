@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Videoclub.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/visual/login.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/visual/index.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/Cliente.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/visual/updateCliente.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/visual/mainAdmin.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/vendor/autoload.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/app/Dwes/ProyectoVideoclub/visual/formUpdateCliente.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/inicio3.php</file>
+            <file>file:/C:/wamp64/www/Proyecto_Videoclub/composer.json</file>
         </group>
     </open-files>
 </project-private>
